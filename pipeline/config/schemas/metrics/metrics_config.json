@@ -1,0 +1,113 @@
+{
+  "classification": {
+    "fields": [
+      "auc_roc",
+      "auprc",
+      "macro_f1",
+      "micro_f1",
+      "weighted_f1",
+      "f1_score",
+      "balanced_accuracy",
+      "accuracy",
+      "precision",
+      "recall",
+      "specificity",
+      "npv",
+      "kappa",
+      "mcc"
+    ],
+    "json_template": {
+      "auc_roc": "",
+      "auprc": "",
+      "macro_f1": "",
+      "micro_f1": "",
+      "weighted_f1": "",
+      "f1_score": "",
+      "balanced_accuracy": "",
+      "accuracy": "",
+      "precision": "",
+      "recall": "",
+      "specificity": "",
+      "npv": "",
+      "kappa": "",
+      "mcc": ""
+    },
+    "prompt_base": "You are an expert at extracting classification metrics from scientific papers. Only provide classification metrics. Prefer AUROC, AUPRC, and macro/micro F1 when available. Normalize synonyms (AUROC=ROC AUC, AUPRC=PR AUC=Average Precision, sensitivity=recall, specificity=TNR). Capture macro/micro/weighted explicitly if stated. Record NPV (negative predictive value) in npv; PPV is precision."
+  },
+  "segmentation": {
+    "fields": [
+      "dice_coefficient",
+      "iou",
+      "f1_score",
+      "precision",
+      "recall",
+      "specificity",
+      "pixel_accuracy",
+      "hd95",
+      "aji"
+    ],
+    "json_template": {
+      "dice_coefficient": "",
+      "iou": "",
+      "f1_score": "",
+      "precision": "",
+      "recall": "",
+      "specificity": "",
+      "pixel_accuracy": "",
+      "hd95": "",
+      "aji": ""
+    },
+    "prompt_base": "You are an expert at extracting segmentation metrics from scientific papers. Only provide segmentation metrics. Prefer Dice and IoU. Include F1, precision, recall, pixel accuracy when given. Record HD95 (Hausdorff 95) and AJI when reported. Normalize synonyms (Dice=Sorensen Dice, IoU=Jaccard)."
+  },
+  "detection": {
+    "fields": [
+      "map",
+      "ap50",
+      "ap75",
+      "froc",
+      "sensitivity_at_1_fp_per_image",
+      "sensitivity_at_2_fp_per_image"
+    ],
+    "json_template": {
+      "map": "",
+      "ap50": "",
+      "ap75": "",
+      "froc": "",
+      "sensitivity_at_1_fp_per_image": "",
+      "sensitivity_at_2_fp_per_image": ""
+    },
+    "prompt_base": "You are an expert at extracting detection metrics (mitosis, nuclei, lesion). Only provide detection metrics. Prefer mAP, AP50, AP75. Include FROC or sensitivity at fixed false positives per image when available."
+  },
+  "regression": {
+    "fields": [
+      "mae",
+      "rmse",
+      "r2",
+      "spearman_r",
+      "pearson_r"
+    ],
+    "json_template": {
+      "mae": "",
+      "rmse": "",
+      "r2": "",
+      "spearman_r": "",
+      "pearson_r": ""
+    },
+    "prompt_base": "You are an expert at extracting regression metrics. Only provide regression metrics. Prefer MAE, RMSE, and R2. Include Spearman r and Pearson r when present."
+  },
+  "survival": {
+    "fields": [
+      "c_index",
+      "hazard_ratio",
+      "time_dependent_auc",
+      "ibs"
+    ],
+    "json_template": {
+      "c_index": "",
+      "hazard_ratio": "",
+      "time_dependent_auc": "",
+      "ibs": ""
+    },
+    "prompt_base": "You are an expert at extracting survival analysis metrics. Only provide survival metrics. Prefer C-index. Include time-dependent AUC (record horizon if provided, e.g., AUC@1yr) and Integrated Brier Score (IBS) when present. Record the hazard ratio (HR) of the model's predicted risk groups or risk score (Cox regression) in hazard_ratio, as the point estimate."
+  }
+}

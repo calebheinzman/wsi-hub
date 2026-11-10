@@ -1,0 +1,7 @@
+histopathology or cytology microscopy images (whole-slide images OR WSI OR image patches/tiles OR tissue microarrays OR microscopy fields)
+machine learning OR deep learning OR neural networks
+
+genomic, transcriptomic or molecular data analysed WITHOUT any histopathology or microscopy images
+radiology images (x-ray, CT, MRI, ultrasound, mammography) WITHOUT any histopathology or microscopy images
+drug resistance OR drug susceptibility OR antibiotic resistance
+review article OR survey OR editorial OR commentary OR book chapter overview (not original research)

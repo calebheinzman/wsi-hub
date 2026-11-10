@@ -1,0 +1,103 @@
+{
+  "properties": {
+    "domain": { "type": "string", "enum": ["histopathology","cytology","molecular-pathology","optical-label-free","gross-pathology","multimodal"] },
+    "biological_domain": { 
+      "type": "string", 
+      "pattern": "^(oncology|immunology|neurology|cardiology|nephrology|hepatology|pulmonology|gastroenterology|dermatology|hematology|infectious-disease|transplant|developmental|toxicology|other)(\\|(oncology|immunology|neurology|cardiology|nephrology|hepatology|pulmonology|gastroenterology|dermatology|hematology|infectious-disease|transplant|developmental|toxicology|other))*$"
+    },
+    "modality": { "type": "string", "pattern": "^(brightfield|fluorescence|ihc-dab|multiplex-if|fish|srh|oct|mpm|tma|spatial-transcriptomics|other)(\\|(brightfield|fluorescence|ihc-dab|multiplex-if|fish|srh|oct|mpm|tma|spatial-transcriptomics|other))*$" },
+    "tissue_site": {
+      "type": "string",
+      "pattern": "^(kidney|breast|lung|brain|skin|blood|multi-organ|rectum|colon|colorectal|gastrointestinal|stomach|gastric|uterus|endometrial|lymph-node|placenta|bone-marrow|cervix|esophagus|ovary|liver|prostate|eye|head-neck|oral-cavity|pancreas|bone|bladder|thyroid|adrenal|spleen|heart|muscle|testis|other)(\\|(kidney|breast|lung|brain|skin|blood|multi-organ|rectum|colon|colorectal|gastrointestinal|stomach|gastric|uterus|endometrial|lymph-node|placenta|bone-marrow|cervix|esophagus|ovary|liver|prostate|eye|head-neck|oral-cavity|pancreas|bone|bladder|thyroid|adrenal|spleen|heart|muscle|testis|other))*$"
+    },
+    "species": {
+      "type": "string",
+      "pattern": "^(human|mouse|rat|dog|pig|monkey|rabbit|other)(\\|(human|mouse|rat|dog|pig|monkey|rabbit|other))*$"
+    },
+    "staining_type": {
+      "type": "string",
+      "pattern": "^(h&e|ihc|pap-stain|giemsa|pas|trichrome|silver|multiplex-if|unstained|other)(\\|(h&e|ihc|pap-stain|giemsa|pas|trichrome|silver|multiplex-if|unstained|other))*$"
+    },
+    "wsi_or_patch": { "type": "string", "enum": ["wsi","patch","both",""], "description": "\"\" means the source did not state which; do not infer" },
+    "annotation_types": {
+      "type": "string",
+      "pattern": "^(polygon|mask|point|box|label|landmark-points|roi-crop|heatmap|cell-graph|text|other)(\\|(polygon|mask|point|box|label|landmark-points|roi-crop|heatmap|cell-graph|text|other))*$"
+    },
+    "labels": {
+      "type": "string",
+      "description": "Pipe-separated list of primary discrete label names (class and/or region/segmentation labels) used in the main supervised tasks described in the paper, e.g. \"benign|malignant|atypical\" or \"tumor-core|edema|necrosis\". Use \"na\" if the paper does not use explicit discrete labels (e.g., purely self-supervised or regression-only)."
+    },
+
+    "mpp": { "type": "number", "minimum": 0, "maximum": 10, "description": "micrometers per pixel; 0 means not stated" },
+    "scanner": { "type": "string" }, 
+    "tile_size_px": { "type": "integer", "minimum": 32, "maximum": 32768 },
+    "tiling_strategy": { "type": "string", "enum": ["grid","tissue-mask","hotspot","random","other"] },
+
+    "n_patients": { "type": "integer", "minimum": 0 },
+    "n_slides": { "type": "integer", "minimum": 0 },
+    "n_tiles": { "type": "integer", "minimum": 0 },
+    "n_centers": { "type": "integer", "minimum": 0 },
+    "class_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+
+    "split_level": { "type": "string", "enum": ["patient","case","slide","tile"] },
+    "split_method": { "type": "string", "enum": ["holdout","kfold","loo","stratified","other"] },
+    "external_validation": { "type": "boolean" },
+
+    "annotation_provenance": {
+      "type": "object",
+      "properties": {
+        "n_annotators": { "type": "integer", "minimum": 0 },
+        "expertise": { "type": "string", "enum": ["attending","fellow","resident","technologist","mixed","unknown"] },
+        "consensus": { "type": "string", "enum": ["single","majority","adjudicated","unknown"] }
+      },
+      "additionalProperties": false
+    },
+
+    "outcome_endpoint": { "type": "string", "enum": ["diagnosis","grade","stage","survival","recurrence","treatment-response","none","other"] },
+
+    "model_details": {
+      "type": "object",
+      "properties": {
+        "model_type": { "type": "string", "enum": ["cnn","transformer","mil","graph-nn","hybrid","rnn","other"] },
+        "backbone": { "type": "string", "enum": ["resnet","densenet","efficientnet","vgg","inception","vit","swin","convnext","deit","custom","other"] },
+        "pretraining_strategy": { "type": "string", "enum": ["none","imagenet","pathology-ssl","foundation-model","other"] },
+        "foundation_model": { "type": "string", "enum": ["none","uni","conch","prov-gigapath","remedis","ctranspath","phikon","plip","virchow","hibou","other"] }
+      },
+      "additionalProperties": false
+    },
+
+    "multimodal_flags": {
+      "type": "object",
+      "properties": {
+        "uses_radiology": { "type": "boolean" },
+        "other_modalities": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "dataset_access": { "type": "string", "enum": ["open","restricted","proprietary","on-request","unknown"] },
+    "license": { "type": "string", "enum": ["CC0","CC-BY","CC-BY-NC","custom","unknown"] },
+    "resource_urls": { "type": "string" }, 
+
+    "paper": {
+      "type": "object",
+      "properties": {
+        "doi": { "type": "string" },
+        "venue": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "preprocessing_methods": {
+      "type": "string",
+      "description": "Pipe-separated preprocessing methods",
+      "pattern": "^(tissue-detection|color-normalization|stain-normalization|macenko-normalization|reinhard-normalization|vahadane-normalization|background-removal|tiling|patching|resizing|rescaling|grayscale-conversion|artifact-removal|blur-detection|pen-mark-removal|focus-stacking|white-balance|clahe|histogram-equalization|contrast-enhancement|denoising|sharpening|otsu-thresholding|morphological-operations|roi-extraction|downsampling|pyramid-generation|z-score-normalization|min-max-normalization|quality-filtering|center-cropping|random-cropping|stain-separation|foreground-extraction|none|other)(\\|(tissue-detection|color-normalization|stain-normalization|macenko-normalization|reinhard-normalization|vahadane-normalization|background-removal|tiling|patching|resizing|rescaling|grayscale-conversion|artifact-removal|blur-detection|pen-mark-removal|focus-stacking|white-balance|clahe|histogram-equalization|contrast-enhancement|denoising|sharpening|otsu-thresholding|morphological-operations|roi-extraction|downsampling|pyramid-generation|z-score-normalization|min-max-normalization|quality-filtering|center-cropping|random-cropping|stain-separation|foreground-extraction|none|other))*$"
+    },
+
+    "augmentation_methods": {
+      "type": "string",
+      "description": "Pipe-separated augmentation methods",
+      "pattern": "^(horizontal-flip|vertical-flip|rotation|random-rotation|90-rotation|180-rotation|random-crop|center-crop|color-jitter|brightness|contrast|saturation|hue|gaussian-blur|gaussian-noise|elastic-deformation|affine-transform|scale|shear|translate|cutout|random-erasing|mixup|cutmix|mosaic|randaugment|autoaugment|stain-augmentation|color-augmentation|random-resize|perspective-transform|grid-distortion|optical-distortion|morphological-augmentation|coarse-dropout|grid-dropout|channel-shuffle|normalize|random-flip|random-brightness|random-contrast|random-saturation|additive-noise|multiplicative-noise|motion-blur|median-blur|jpeg-compression|none|other)(\\|(horizontal-flip|vertical-flip|rotation|random-rotation|90-rotation|180-rotation|random-crop|center-crop|color-jitter|brightness|contrast|saturation|hue|gaussian-blur|gaussian-noise|elastic-deformation|affine-transform|scale|shear|translate|cutout|random-erasing|mixup|cutmix|mosaic|randaugment|autoaugment|stain-augmentation|color-augmentation|random-resize|perspective-transform|grid-distortion|optical-distortion|morphological-augmentation|coarse-dropout|grid-dropout|channel-shuffle|normalize|random-flip|random-brightness|random-contrast|random-saturation|additive-noise|multiplicative-noise|motion-blur|median-blur|jpeg-compression|none|other))*$"
+    }
+  }
+}

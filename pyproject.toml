@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wsi-hub"
+version = "1.0.0"
+description = "WSI Hub: a catalog of whole-slide-image pathology datasets, papers and reported metrics"
+requires-python = ">=3.10"
+dependencies = [
+    "openai",
+    "google-genai",
+    "requests",
+    "beautifulsoup4",
+    "PyPDF2",
+    "click",
+    "python-dotenv",
+    "jsonschema>=4.0",
+    "numpy",
+    "tqdm",
+    "psycopg[binary]>=3.1",
+    "supabase",
+    "filelock",                          # cross-process locks on Windows (POSIX uses fcntl)
+    "psutil; sys_platform == 'win32'",   # keep-going stops a stalled run's whole process tree
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.40"]
+analysis = ["numpy==2.5.4", "pandas==3.1.0", "matplotlib==3.11.2", "rapidfuzz==3.14.6"]
+
+[project.scripts]
+wsi-hub = "pipeline.src.cli:cli"
+
+[tool.setuptools.packages.find]
+include = ["pipeline*", "evaluation*"]
+
+[tool.setuptools.package-data]
+pipeline = ["config/**/*"]

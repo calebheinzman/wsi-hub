@@ -1,0 +1,16 @@
+{
+  "name": "regression_results",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "mae": { "type": "string" },
+      "rmse": { "type": "string" },
+      "r2": { "type": "string" },
+      "spearman_r": { "type": "string" },
+      "pearson_r": { "type": "string" }
+    },
+    "required": ["mae", "r2"],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,24 @@
+Extract metadata for **the one named dataset** the user provides into a single JSON object that conforms to the schema below.
+
+Return exactly **one** JSON object — not an array, not a list, not a wrapper like `{"datasets": [...]}`. The top-level value must be the object whose keys are the schema fields.
+
+Schema fields (exact names, types, and enums):
+{fields}
+
+## Conformance rules
+- Use only allowed enum values; map common synonyms (`"semantic segmentation"`, `"gpl v3"` → `"gplv3"`, `"apache 2.0"` → `"apache-2.0"`, `"hematoxylin and eosin"` / `"he"` → `"h&e"`).
+- All string values lowercase, except URLs: copy URLs exactly as written (paths can be case-sensitive).
+- `dataset_name` for a data deposit titled after its paper ("Data for: Tang et al., Interpretable classification of …") is the name the papers and pages call the dataset, not the deposit's title.
+- Multi-value fields use a single pipe character with no spaces (`"breast|lung"`).
+- Numeric fields that are genuinely unstated use `0`. Never substitute a plausible-looking stand-in (e.g. do not use `0.25` for an unstated `mpp`).
+- `n_slides` is the number of slides in the public release (a page saying 1,488 slides are archived, of which 125 are released, gives `125`); for patches cut from N slides it is N.
+- `tissue_site` covers the whole released dataset, not one page's example: a database or atlas spanning four or more organs is `multi-organ`. Name the organ for a disease (lymphoma → `lymph-node`, glioma → `brain`).
+- `license`: Creative Commons variants map to their base — CC BY-NC-SA / CC BY-NC-ND → `CC-BY-NC`, CC BY-SA / CC BY-ND → `CC-BY`; `custom` = a named license that is not Creative Commons (the dataset's own license or data-use agreement); a website's general terms of use or a copyright notice is not a license: `unknown`, as when nothing says.
+- Counts and `year` often appear only in the papers' descriptions, not on the dataset's pages: when the pages don't give `n_slides`, `n_patients` or `year` and a description does, use the description's value. `year` is the year the dataset was first released or published.
+- Include all required keys; do not add keys outside the schema.
+- `wsi_or_patch` is the **format of the released images**, not how any paper trained on them: `wsi` = whole-slide images; `patch` = pre-cut patches/tiles, or fixed-size microscope field images captured with a camera; `both` = the release contains both (whole slides plus patches cut from them, as in BACH / ICIAR 2018; whole TMA slide scans plus per-core images). Set it whenever the sources or the papers' descriptions say what kind of images are released (e.g. "3771 microscopic images", "512x512 patches", ".svs slides"); use `""` only when nothing says. Do **not** substitute `"nan"`, `"unknown"`, or any other placeholder string.
+- `is_public: true` when the data can be downloaded without paying, without an institutional login, and without an approval or data-use committee — from the official site **or** an official or widely used public mirror (GitHub, Zenodo, figshare, Kaggle, Hugging Face, Mendeley Data), including challenge sites that only need a free account. `false` for "available on request", controlled access (dbGaP, EGA, signed DUA), or when no download can be found. Copyright or reuse terms ("permission required to reproduce", a non-commercial license) limit what users may do with the data, not who can get it: they do not make it non-public.
+- `home_page_url` is the dataset's own landing page — a data-repository record (Zenodo, Mendeley Data, figshare, Kaggle, Hugging Face), a challenge or project site, a GitHub repository, or for a TCGA cohort its GDC project page (`https://portal.gdc.cancer.gov/projects/TCGA-XXXX`) — which is also its `download_url`, since the slides are downloaded from GDC. **Never** the paper that introduced it: not an article, abstract or publisher page (sciencedirect.com, springer.com, nature.com, pubmed/PMC, arxiv.org/abs). Leave it `""` when only the paper is found. For a programme that also holds non-image data, the home is the page hosting its images (TCIA's CPTAC pages for CPTAC's slides). For a challenge or established dataset, the home is the organizers' page; a third-party repository that re-distributes, extends or re-splits it is a different dataset, so don't use it unless the papers mean that derivative.
+- Describe the dataset the papers mean (the "How research papers … describe it" section, when present). Ignore pages about a different dataset or a different release of the same program, such as the radiology collection of a TCGA cohort when the papers use its slides; take what those descriptions state when no page covers the right release.
+
+Return only the JSON object — no prose, no code fences. Do **not** invent values that are not supported by the provided summaries.

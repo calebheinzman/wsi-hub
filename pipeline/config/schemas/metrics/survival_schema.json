@@ -1,0 +1,15 @@
+{
+  "name": "survival_results",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "c_index": { "type": "string" },
+      "hazard_ratio": { "type": "string" },
+      "time_dependent_auc": { "type": "string" },
+      "ibs": { "type": "string" }
+    },
+    "required": ["c_index"],
+    "additionalProperties": false
+  }
+}

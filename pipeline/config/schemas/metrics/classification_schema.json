@@ -1,0 +1,25 @@
+{
+  "name": "classification_results",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "auc_roc": { "type": "string" },
+      "auprc": { "type": "string" },
+      "macro_f1": { "type": "string" },
+      "micro_f1": { "type": "string" },
+      "weighted_f1": { "type": "string" },
+      "f1_score": { "type": "string" },
+      "balanced_accuracy": { "type": "string" },
+      "accuracy": { "type": "string" },
+      "precision": { "type": "string" },
+      "recall": { "type": "string" },
+      "specificity": { "type": "string" },
+      "npv": { "type": "string" },
+      "kappa": { "type": "string" },
+      "mcc": { "type": "string" }
+    },
+    "required": ["auc_roc", "macro_f1", "accuracy"],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "_about": "Operational grouping for paper_analysis.py. Retain documented alias mappings below and merge matching normalized names only when resource URLs agree. Unresolved identities stay separate. A group is not a source-adjudicated unique dataset. keep_separate lists explicit alias groups that must remain separate from other same-name records.",
+ "merge": {
+  "brca": "tcga-brca",
+  "cancer-genome-atlas-breast-invasive-carcinoma-tcga-brca": "tcga-brca",
+  "breast-invasive-carcinoma-brca": "tcga-brca",
+  "lusc": "tcga-lusc",
+  "kirc": "tcga-kirc",
+  "tcga-gastric": "tcga-stad",
+  "prcc": "tcga-kirp",
+  "tcga-prostate-cell-2015": "tcga-prad",
+  "the-cancer-genome-atlas-prostate-adenocarcinoma-collection-tcga-prad": "tcga-prad",
+  "thyroid-cancer-dataset": "tcga-thca",
+  "cervical-cancer-dataset": "tcga-cesc",
+  "esophageal-adenocarcinoma-pathology-dataset": "tcga-esca",
+  "crc-dx": "tcga-crc-dx",
+  "batch": "bach",
+  "iciar-2018-challenge-dataset-breast-histology-images": "bach",
+  "kather-100k": "nct-crc-he-100k",
+  "nuclei-segmentation-benchmark": "monuseg",
+  "warwick-qu": "glas",
+  "midog-challenge": "midog",
+  "mitosis-domain-generalization-challenge-midog": "midog",
+  "tumor-proliferation-assessment-challenge-tupac": "tupac16",
+  "tupac16-challenge": "tupac16",
+  "tupac16-training": "tupac16",
+  "crag-mild-net": "crag",
+  "cpm": "cpm-17",
+  "tils-in-breast-cancer-challenge": "tiger"
+ },
+ "keep_separate": [
+  [
+   "midogpp",
+   "a-comprehensive-multi-domain-dataset-for-mitotic-figure-detection"
+  ],
+  [
+   "deepcell"
+  ],
+  [
+   "tissuenet"
+  ]
+ ],
+ "root_patterns": {
+  "tcga": "^tcga\\b|cancer genome atlas",
+  "cptac": "^cptac\\b|clinical proteomic tumor analysis consortium"
+ },
+ "identity_review": {
+  "date": "2026-11-01",
+  "separated": {
+   "deepcell / tissuenet": "Different microscopy resources; DeepCell TissueNet versus cervical-biopsy TissueNet challenge.",
+   "training-images-for-msi-detection-zenodo-2530835 / training-images-for-msi-detection-zenodo-2532612": "Separate FFPE and frozen MSI deposits; resource identities differ."
+  },
+  "sources": [
+   "https://www.nature.com/articles/s41587-021-01094-0",
+   "https://www.drivendata.org/competitions/67/competition-cervical-biopsy/",
+   "https://zenodo.org/records/2530835",
+   "https://zenodo.org/records/2532612"
+  ]
+ }
+}

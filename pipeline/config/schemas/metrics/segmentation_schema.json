@@ -1,0 +1,20 @@
+{
+  "name": "segmentation_results",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "dice_coefficient": { "type": "string" },
+      "iou": { "type": "string" },
+      "f1_score": { "type": "string" },
+      "precision": { "type": "string" },
+      "recall": { "type": "string" },
+      "specificity": { "type": "string" },
+      "pixel_accuracy": { "type": "string" },
+      "hd95": { "type": "string" },
+      "aji": { "type": "string" }
+    },
+    "required": ["dice_coefficient", "iou"],
+    "additionalProperties": false
+  }
+}

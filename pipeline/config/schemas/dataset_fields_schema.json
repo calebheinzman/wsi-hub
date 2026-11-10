@@ -1,0 +1,146 @@
+{
+  "name": "histopathology_dataset_metadata",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "is_public": { "type": "boolean" },
+
+      "slug": { "type": "string" },
+      "dataset_name": { "type": "string" },
+      "year": { "type": "integer" },
+      "description": { "type": "string", "maxLength": 280 },
+      "code_url": { "type": "string" },
+      "download_url": { "type": "string" },
+      "home_page_url": { "type": "string" },
+
+      "domain": {
+        "type": "string",
+        "enum": ["histopathology","cytology","molecular-pathology","optical-label-free","gross-pathology","multimodal"]
+      },
+      "modality": {
+        "type": "string",
+        "pattern": "^(brightfield|fluorescence|ihc-dab|multiplex-if|fish|srh|oct|mpm|tma|spatial-transcriptomics|other)(\\|(brightfield|fluorescence|ihc-dab|multiplex-if|fish|srh|oct|mpm|tma|spatial-transcriptomics|other))*$"
+      },
+
+      "tissue_site": {
+        "type": "string",
+        "pattern": "^(kidney|breast|lung|brain|skin|blood|multi-organ|rectum|colon|colorectal|gastrointestinal|stomach|gastric|uterus|endometrial|lymph-node|placenta|bone-marrow|cervix|esophagus|ovary|liver|prostate|eye|head-neck|oral-cavity|pancreas|bone|bladder|thyroid|adrenal|spleen|heart|muscle|testis|other)(\\|(kidney|breast|lung|brain|skin|blood|multi-organ|rectum|colon|colorectal|gastrointestinal|stomach|gastric|uterus|endometrial|lymph-node|placenta|bone-marrow|cervix|esophagus|ovary|liver|prostate|eye|head-neck|oral-cavity|pancreas|bone|bladder|thyroid|adrenal|spleen|heart|muscle|testis|other))*$"
+      },
+
+      "species": {
+        "type": "string",
+        "pattern": "^(human|mouse|rat|dog|other)(\\|(human|mouse|rat|dog|other))*$"
+      },
+      "sample_prep": {
+        "type": "string",
+        "pattern": "^(ffpe|smear|frozen|thinprep|cytospin|other)(\\|(ffpe|smear|frozen|thinprep|cytospin|other))*$"
+      },
+      "staining_type": {
+        "type": "string",
+        "pattern": "^(h&e|ihc|pap-stain|giemsa|pas|trichrome|silver|multiplex-if|unstained|other)(\\|(h&e|ihc|pap-stain|giemsa|pas|trichrome|silver|multiplex-if|unstained|other))*$"
+      },
+
+      "mpp": { "type": "number", "minimum": 0, "maximum": 10, "description": "micrometers per pixel; 0 means not stated" },
+      "mag_min": {
+          "type": "integer"
+      },
+      "mag_max": {
+          "type": "integer"
+      },
+      "scanner": { "type": "string" },
+
+      "image_format": {
+        "type": "string",
+        "pattern": "^(svs|ndpi|mrxs|ome-tiff|tiff|png|jpeg|jpg|jp2|zarr|hdf5|dicom|other)(\\|(svs|ndpi|mrxs|ome-tiff|tiff|png|jpeg|jpg|jp2|zarr|hdf5|dicom|other))*$"
+      },
+
+      "approx_size_gb": {
+        "type": "number"
+      },
+
+      "wsi_or_patch": { "type": "string", "enum": ["wsi","patch","both",""], "description": "\"\" means the source did not state which; do not infer" },
+      "tile_size_px": { "type": "integer", "minimum": 0, "maximum": 32768, "description": "tile size in pixels; 0 means not stated" },
+      "tiling_strategy": { "type": "string", "enum": ["grid","tissue-mask","hotspot","random","other"] },
+
+      "n_patients": { "type": "integer", "minimum": 0 },
+      "n_slides":   { "type": "integer", "minimum": 0 },
+      "n_tiles":    { "type": "integer", "minimum": 0 },
+      "n_centers":  { "type": "integer", "minimum": 0 },
+
+      "task": {
+        "type": "string",
+        "pattern": "^(classification|segmentation|semantic segmentation|regression|other)(\\|(classification|segmentation|semantic segmentation|regression|other))*$"
+      },
+      "labels": {
+        "type": "string",
+        "description": "Pipe-separated list of primary discrete label names (class and/or region/segmentation labels) for the main tasks, e.g. \"benign|malignant|atypical\" or \"tumor-core|edema|necrosis\". Use \"na\" if the dataset does not use explicit discrete labels (e.g., regression-only or self-supervised)."
+      },
+
+      "annotation_level": {
+        "type": "string",
+        "pattern": "^(slide|region|tile|cell|pixel|object|patient|other)(\\|(slide|region|tile|cell|pixel|object|patient|other))*$"
+      },
+      "annotation_format": {
+        "type": "string",
+        "pattern": "^(xml|json|coco|txt|png|tiff|dicom-seg|xls|csv|sqlite db|mat / hdf5|\\.mat|other)(\\|(xml|json|coco|txt|png|tiff|dicom-seg|xls|csv|sqlite db|mat / hdf5|\\.mat|other))*$"
+      },
+      "annotation_types": {
+          "type": "string",
+          "pattern": "^(polygon|mask|point|box|label|landmark-points|roi-crop|heatmap|cell-graph|text|other)(\\|(polygon|mask|point|box|label|landmark-points|roi-crop|heatmap|cell-graph|text|other))*$"
+        },
+
+      "split_level":  { "type": "string", "enum": ["patient","case","slide","tile"] },
+      "split_method": { "type": "string", "enum": ["holdout","kfold","loo","stratified","other"] },
+      "external_validation": { "type": "boolean" },
+
+      "dataset_access": { "type": "string", "enum": ["open","restricted","proprietary","on-request","unknown"] },
+      "license": { "type": "string", "enum": ["CC0","CC-BY","CC-BY-NC","custom","unknown"] },
+
+      "institutions": { "type": "string" },
+      "resource_urls": { "type": "string" },
+
+      "paper": {
+        "type": "object",
+        "properties": {
+          "doi": { "type": "string" },
+          "venue": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "required": [
+      "is_public",
+      "slug",
+      "dataset_name",
+      "year",
+      "description",
+      "code_url",
+      "download_url",
+      "home_page_url",
+      "domain",
+      "modality",
+      "tissue_site",
+      "species",
+      "sample_prep",
+      "staining_type",
+      "mpp",
+      "image_format",
+      "wsi_or_patch",
+      "n_slides",
+      "n_patients",
+      "task",
+      "labels",
+      "annotation_level",
+      "dataset_access",
+      "license",
+      "approx_size_gb",
+      "mag_min",
+      "mag_max",
+      "annotation_types"
+    ],
+
+    "additionalProperties": false
+  }
+}

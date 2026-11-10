@@ -1,0 +1,6 @@
+{
+  "_doc": "Child dataset name -> the dataset it is a subset of (case-insensitive names). TCGA cohorts are handled by the rule in dataset_canonical.tcga_parent; add other subset relations here.",
+  "parents": {
+    "CPTAC lung (LUAD + LSCC)": "CPTAC"
+  }
+}

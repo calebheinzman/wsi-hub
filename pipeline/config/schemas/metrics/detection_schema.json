@@ -1,0 +1,17 @@
+{
+  "name": "detection_results",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "map": { "type": "string" },
+      "ap50": { "type": "string" },
+      "ap75": { "type": "string" },
+      "froc": { "type": "string" },
+      "sensitivity_at_1_fp_per_image": { "type": "string" },
+      "sensitivity_at_2_fp_per_image": { "type": "string" }
+    },
+    "required": ["map", "ap50"],
+    "additionalProperties": false
+  }
+}

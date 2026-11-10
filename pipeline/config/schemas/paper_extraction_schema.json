@@ -1,0 +1,44 @@
+{
+  "name": "histopathology_paper_metadata",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "Journal": {
+        "type": "string",
+        "description": "Full journal or venue name"
+      },
+      "Abstract": {
+        "type": "string",
+        "description": "Complete abstract from the paper, unmodified"
+      },
+      "Methods": {
+        "type": "string",
+        "description": "Key methodology as a plain markdown string with bullet points (e.g., '- **Data**: ...\n- **Model**: ...'). Must be a raw string, NOT a JSON object or array."
+      },
+      "Results": {
+        "type": "string",
+        "description": "Key findings as a plain markdown string with bullet points (e.g., '- **AUC**: 0.94\n- **Finding**: ...'). Must be a raw string, NOT a JSON object or array."
+      },
+      "Processing Pipeline": {
+        "type": "array",
+        "description": "High-level processing pipeline(s) described in the paper. Each inner array is an ordered list of very short step labels (1-3 words each) for one end-to-end pipeline. Aim for a compact overview with about 3-6 steps per pipeline (e.g., [\"Patch extraction\", \"Preprocessing\", \"MIL training\", \"WSI output\"]). If the paper describes multiple distinct pipelines (e.g., baseline vs. proposed method), include one inner array per pipeline.",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "required": [
+      "Journal",
+      "Abstract",
+      "Methods",
+      "Results",
+      "Processing Pipeline"
+    ],
+    "additionalProperties": false
+  }
+}

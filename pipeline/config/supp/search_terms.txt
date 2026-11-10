@@ -1,0 +1,200 @@
+deep learning WSI patches
+WSI patch classification CNN
+histology patch classification
+WSI tile classification deep learning
+patch-wise classification WSI
+deep CNNs WSI histology patches
+patch mining for WSI classification
+high-resolution patch classification
+patch-to-slide inference models
+patch-to-slide aggregation methods
+patch embeddings histopathology
+fine-grained patch modeling WSI
+patch learning with CNNs
+patch learning with ViTs
+context-aware patch classification
+slide-level cancer detection patches
+patch-level cancer classification
+multi-class patch classification WSI
+rare cancer patch classification
+patch-based disease classification
+hierarchical WSI patch classification
+fine-grained cancer patch detection
+ensemble patch classifiers
+MIL patch-based classification
+outcome prediction from patches
+semantic segmentation WSI patches
+tumor segmentation WSI patches
+gland segmentation in WSIs
+nuclei segmentation WSI tiles
+region-of-interest detection WSI
+adaptive patch sampling pathology
+region proposal in WSIs
+localization of tumor patches
+ROI-guided patch sampling
+smart patch localization strategies
+epithelium segmentation WSIs
+stroma segmentation patches
+tissue boundary detection WSI
+hierarchical segmentation WSI
+self-supervised WSI feature extraction
+contrastive patch learning WSIs
+patch-level contrastive pretraining
+latent space patch representation
+patch clustering histopathology
+cross-slide unsupervised learning
+unsupervised patch embeddings
+representation learning for patches
+masked autoencoders for WSI patches
+BYOL patch learning WSIs
+SimCLR WSI patch learning
+MoCo WSI patch training
+SwAV patch-level training
+self-supervised pathology encoders
+unsupervised patch selection
+SSL pathology patch pipelines
+weak labels for patch learning
+weakly-supervised WSI patch models
+multiple instance learning WSI patches
+MIL pooling strategies WSI
+attention pooling patch MIL
+slide-level labels for patch learning
+bag-level MIL in WSIs
+WSI MIL transformers
+weak labels WSI outcome prediction
+patch MIL attention mechanisms
+graph-based MIL WSIs
+interpretable MIL patch learning
+MIL-based tumor detection
+pseudo-labeling WSI patches
+hybrid MIL CNN-ViT models
+MIL for outcome prediction
+robust MIL for WSI pathology
+MIL pooling for ViTs WSIs
+WSI MIL benchmarking
+stain normalization in WSI patches
+stain invariant patch learning
+domain adaptation WSI patches
+cross-domain patch generalization
+cross-slide patch generalization
+stain transfer in histopathology
+stain style augmentation WSI
+color normalization pathology patches
+stain-adaptive patch models
+stain-agnostic patch features
+generalization across WSI scanners
+stain-invariant ViT WSI patches
+cross-lab WSI patch adaptation
+unsupervised stain normalization
+generative stain augmentation patches
+style transfer for pathology WSIs
+transformer models for WSI patches
+vision transformers WSI patches
+ViT-based WSI patch analysis
+Swin Transformer for WSIs
+hierarchical transformer WSI patches
+global-local transformer WSI
+transformer MIL for pathology
+hybrid CNN-ViT WSI models
+graph transformers pathology WSIs
+interpretable ViTs WSI patches
+attention-based transformers WSI
+slide-level transformer pipelines
+multi-scale ViT for WSI patches
+deformable transformer WSIs
+explainable transformer WSIs
+patch transformer embeddings
+benchmarking ViTs in WSIs
+CNN-Transformer fusion WSIs
+ensemble transformers WSIs
+graph-transformer hybrids WSIs
+patch dropout augmentation WSI
+stain jittering patch augmentation
+contrastive patch augmentation WSIs
+patch rotations pathology learning
+random crop WSI patches
+stratified patch sampling pathology
+multi-scale patch augmentation
+GAN-based patch augmentation
+synthetic patch generation WSIs
+curriculum learning with patches
+adversarial augmentation WSI patches
+noise injection patch augmentation
+rotation-invariant patch models
+patch classifier robustness WSIs
+patch generalization across cohorts
+calibration in WSI patch classifiers
+patch drift detection WSIs
+uncertainty estimation in patch models
+robust patch classification strategies
+explainable patch models WSI
+interpretable patch classification
+heatmap generation WSI patches
+attention visualization pathology
+interpretable MIL patch models
+local explanation of WSI patches
+global explanation WSI slides
+saliency maps WSI patches
+explainable ViTs WSIs
+explainable graph WSI patches
+patch-level attribution methods
+counterfactual patch explanations
+pathologist-interpretable patch AI
+interpretable patch embeddings
+patch-level explainability frameworks
+transparent WSI prediction models
+pathology explainability pipelines
+patch-based outcome prediction
+slide-level prognosis from patches
+patch models for survival analysis
+patch features for recurrence risk
+patch learning for metastasis detection
+treatment outcome prediction patches
+WSI patches for therapy response
+prognostic feature extraction patches
+WSI-based risk stratification patches
+patch survival modeling WSIs
+patch features for clinical outcome
+prognostic patch MIL pipelines
+patch learning for biomarkers
+immunotherapy prediction patches
+drug response prediction WSIs
+personalized outcome prediction patches
+patch-guided prognostic scores
+multimodal outcome prediction WSIs
+biomarker-guided patch classifiers
+WSI patch retrieval systems
+patch similarity search pathology
+patch embeddings for retrieval
+cross-slide patch retrieval
+patch-level retrieval pipelines
+content-based WSI patch search
+feature-based patch indexing WSIs
+large-scale patch retrieval pathology
+patch hashing for WSIs
+efficient patch retrieval pipelines
+few-shot patch retrieval pathology
+retrieval-augmented patch analysis
+multimodal patch retrieval WSIs
+patch retrieval benchmarking WSIs
+pathology patch and clinical features
+patch integration with EHR data
+multimodal transformers WSIs
+patch + transcriptomics fusion
+multi-source feature fusion WSIs
+pathology + imaging metadata fusion
+multimodal MIL for WSIs
+cross-modal patch integration
+pathology patch + text embeddings
+multimodal explainability WSIs
+multi-omics + WSI patch fusion
+patch-guided therapeutic planning
+personalized pathology patch features
+patch-driven biomarker discovery
+predictive pathology patch learning
+foundation models WSI patches
+pathology foundation encoders
+multimodal foundation pathology WSIs
+pretrained foundation WSI features
+large patch encoders WSIs
+foundation patch transfer learning

@@ -1,0 +1,8 @@
+# Check text files out with LF on every OS, so prompts and configs hash the same on
+# Windows as on macOS (run_manifest's config_sha256) and written artifacts don't churn.
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+*.ico binary
+# Committed with CRLF; kept byte for byte so its hash doesn't change.
+pipeline/config/supp/initial_dataset_list.csv -text

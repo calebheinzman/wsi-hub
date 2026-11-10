@@ -1,0 +1,224 @@
+{
+  "_doc": "Reviewed merges applied after 1.5b canonicalization (dataset_canonical.apply_manual_merges). Canonical name -> canonical slugs that are the same dataset release. Use for judgment calls the model left split.",
+  "merges": {
+    "SOPHIE": [
+      "sophie-61-wsi-valencia-cohort",
+      "sophie-96-wsi-cohort"
+    ],
+    "NLST": [
+      "national-lung-screening-trial",
+      "national-lung-screening-trial-nlst",
+      "national-lung-screening-trial-nlst-pathology-dataset",
+      "nlst"
+    ],
+    "TNBC": [
+      "tnbc-triple-negative-breast-cancer-nuclei-segmentation",
+      "triple-negative-breast-cancer-tnbc-dataset"
+    ],
+    "BACH": [
+      "bach",
+      "grand-challenge-on-breast-cancer-histology-images-iciar-2018",
+      "breast-cancer-histopathology-bach",
+      "bach-wsi",
+      "iciar-ext"
+    ],
+    "LBC Pap Smear": [
+      "mendeley-lbc-cervical-cancer-pap-smear-dataset",
+      "liquid-based-cytology-lbc-pap-smear-dataset",
+      "liquid-based-cytology-pap-smear-dataset",
+      "liquid-based-cytology-pap-smear-images"
+    ],
+    "Kumar (Generalized Nuclear Segmentation)": [
+      "generalized-nuclear-segmentation-dataset-kumar",
+      "a-dataset-and-a-technique-for-generalized-nuclear-segmentation-for-computational-pathology",
+      "multi-organ-nuclei-segmentation-dataset"
+    ],
+    "ACROBAT": [
+      "acrobat",
+      "acrobat-challenge-dataset"
+    ],
+    "AGGC 2022": [
+      "aggc",
+      "automated-gleason-grading-challenge-aggc-2022",
+      "automatic-gleason-grading-challenge-2022-aggc22"
+    ],
+    "BCI": [
+      "bci",
+      "breast-cancer-immunohistochemistry-bci-dataset"
+    ],
+    "BCNB": [
+      "bcnb",
+      "bcnb-challenge",
+      "early-breast-cancer-core-needle-biopsy-wsi-bcnb"
+    ],
+    "BRIGHT": [
+      "bright",
+      "bright-challenge",
+      "bright-challenge-2022"
+    ],
+    "CAMEL": [
+      "camel",
+      "camel-2019"
+    ],
+    "CATCH": [
+      "catch",
+      "catch-canine-cutaneous-cancer-histology",
+      "pan-tumor-canine-cutaneous-cancer-histology-catch-dataset",
+      "canine-cutaneous-cancer-histology"
+    ],
+    "CPM-17": [
+      "cpm-17",
+      "cell-proliferation-in-microscopy-2017-cpm-17",
+      "cpm-17-nuclei-segmentation-challenge-miccai-2017"
+    ],
+    "CPM-15": [
+      "cpm-15",
+      "cpm-15-nuclei-segmentation-dataset-miccai-2017"
+    ],
+    "CPTAC": [
+      "cptac",
+      "clinical-proteomic-tumor-analysis-consortium"
+    ],
+    "CoNIC": [
+      "conic",
+      "conic-lizard"
+    ],
+    "CPM-RadPath 2020": [
+      "cpm-radpath",
+      "cpm-radpath-2020",
+      "cpm-radpath-challenge-dataset"
+    ],
+    "DHMC Lung": [
+      "dhmc-lung",
+      "dhmc-lung-2019"
+    ],
+    "DigestPath 2019": [
+      "digestpath",
+      "digestpath-2019",
+      "digestpath2019",
+      "digestive-system-pathological-detection-and-segmentation-challenge-2019",
+      "digestpath-2019-colonoscopy-tissue-dataset",
+      "digestpath2019-colonoscopy-tissue-segment",
+      "digestpath2019-signet-ring-cell"
+    ],
+    "EBHI": [
+      "ebhi-dataset",
+      "ebhi-a-new-enteroscope-biopsy-histopathological-h-e-image-dataset"
+    ],
+    "FNAC 2019": [
+      "fnac",
+      "fnac-2019"
+    ],
+    "GasHisSDB": [
+      "gashissdb",
+      "gastric-histopathology-sub-size-image-database-gashissdb"
+    ],
+    "Gleason 2019": [
+      "gleason-2019-challenge",
+      "gleason-2019-challenge-dataset",
+      "gleason-challenge-2019"
+    ],
+    "HER2 Scoring Contest 2016": [
+      "her2-challenge-contest-2016-dataset",
+      "her2-challenge-warwick-2016",
+      "her2-contest"
+    ],
+    "HEROHE": [
+      "herohe",
+      "herohe-challenge"
+    ],
+    "MHIST": [
+      "mhist",
+      "minimalist-histopathology-image-analysis-dataset-mhist"
+    ],
+    "MITOS_WSI_CMC": [
+      "mitos-wsi-cmc",
+      "mitos-wsi-cmc-2020"
+    ],
+    "PAIP 2019": [
+      "paip",
+      "paip-2019",
+      "paip-2019-challenge",
+      "paip-2019-challenge-dataset",
+      "paip2019"
+    ],
+    "PAIP 2020": [
+      "paip2020",
+      "paip2020-grand-challenge",
+      "paip-2020-challenge",
+      "paip-2020-colon",
+      "pathology-ai-platform-2020",
+      "pathology-ai-platform-paip",
+      "pathology-ai-platform-paip-colorectal-cancer",
+      "pathology-ai-platform-paip-colorectal-cohort"
+    ],
+    "PanNuke": [
+      "pannuke",
+      "pannuke-dataset"
+    ],
+    "PatchGastricADC22": [
+      "patchgastric",
+      "patchgastricadc22",
+      "patchgastrics-gastric-adenocarcinoma-dataset"
+    ],
+    "SPIDER": [
+      "spider",
+      "spider-supervised-pathology-image-description-repository"
+    ],
+    "TissueNet (cervix)": [
+      "tissuenet-challenge",
+      "tissuenet-cervix"
+    ],
+    "CPTAC-CCRCC": [
+      "cptac-ccrcc",
+      "clinical-proteomic-tumor-analysis-consortium-clear-cell-renal-cell-carcinoma-cptac-ccrcc"
+    ],
+    "CPTAC lung (LUAD + LSCC)": [
+      "clinical-proteomic-tumor-analysis-consortium-lung-cancer-cptac-luad-cptac-lusc",
+      "clinical-proteomic-tumor-analysis-consortium-non-small-cell-lung-cancer"
+    ],
+    "CPTAC-COAD": [
+      "cptac-coad",
+      "cptac-crc"
+    ]
+  },
+  "_reviewed": {
+    "SOPHIE": "2026-10-07",
+    "NLST": "2026-10-12 labeller note: the NLST entries need converging",
+    "TNBC": "2026-10-12: both are the 50-image Naylor et al. TNBC nuclei set",
+    "BACH": "2026-10-12: the ICIAR 2018 grand challenge is BACH; iciar ext is BACH (labeller note); bach wsi is its WSI part",
+    "LBC Pap Smear": "2026-10-12: all four describe the 963-image Mendeley liquid-based cytology Pap smear set",
+    "Kumar (Generalized Nuclear Segmentation)": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "ACROBAT": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "AGGC 2022": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "BCI": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "BCNB": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "BRIGHT": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CAMEL": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CATCH": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CPM-17": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CPM-15": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CPTAC": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CoNIC": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CPM-RadPath 2020": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "DHMC Lung": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "DigestPath 2019": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "EBHI": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "FNAC 2019": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "GasHisSDB": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "Gleason 2019": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "HER2 Scoring Contest 2016": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "HEROHE": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "MHIST": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "MITOS_WSI_CMC": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "PAIP 2019": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "PAIP 2020": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "PanNuke": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "PatchGastricADC22": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "SPIDER": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "TissueNet (cervix)": "2026-10-12 duplicate scan: same release under several names (PAIP 2020 includes the colorectal entries, labeller note)",
+    "CPTAC-CCRCC": "2026-10-12: one CPTAC cohort under two names (CPTAC treated as a program of cohorts, labeller note)",
+    "CPTAC lung (LUAD + LSCC)": "2026-10-12: one CPTAC cohort under two names (CPTAC treated as a program of cohorts, labeller note)",
+    "CPTAC-COAD": "2026-10-12: one CPTAC cohort under two names (CPTAC treated as a program of cohorts, labeller note)"
+  }
+}
